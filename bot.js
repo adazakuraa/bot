@@ -107,12 +107,14 @@ function change(){
     for (var n=0;n<d.length;n++){
         var preid="i"+n
         var a=document.getElementById(preid);
-        if(e==0){
-            a.innerHTML=d[n][1];
-        }
-        else{
-            a.innerHTML="？";
-        }
+	if(a!=null){
+          if(e==0){
+              a.innerHTML=d[n][1];
+          }
+          else{
+              a.innerHTML="？";
+          }
+        }  
     }
     if(e==0){
         e=1;
