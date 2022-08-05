@@ -90,7 +90,7 @@ html{
     position: relative;
     margin: 0.7em 5em;
     padding: 25px 10px 7px;
-    border: solid 2px #53a3dd;
+    border: solid 2px #ddf1f6;
 }
 .box28 .box-title {
     position: absolute;
@@ -101,13 +101,19 @@ html{
     height: 25px;
     line-height: 25px;
     font-size: 17px;
-    background: #53a3dd;
+    background: #8ff0f0;
     
 }
-button{
-    color: #ffffff;
+.box28 button{
+    color: black;
     font-weight: bold;
     border: none;
+}
+
+button{
+    border-color: #999;
+    background: #ffffff;
+    color: #999;
 }
 
 .box28 p {
@@ -120,3 +126,5 @@ button{
 img{
     margin-top: 7px;
 }
+
+

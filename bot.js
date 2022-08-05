@@ -79,15 +79,21 @@ function create_bot(){
 
 //答えの表示・非表示を切り替える
 var c=0;
+var rem=1;
 function ans(thi){
-    if(c==0){
-        var a=document.getElementById(thi.id);
+    var a=document.getElementById(thi.id);
+    if(e==0 && a.innerHTML!="？"){
+        if(rem=1){
+            var parent=a.parentNode;
+            parent.remove();
+        }
+    }
+    else if(a.innerHTML=="？"){
         var str=thi.id.slice(1)
         a.innerHTML=d[str][1];
         c=1;
     }
     else{
-        var a=document.getElementById(thi.id);
         var str=thi.id.slice(1)
         a.innerHTML="？";
         c=0; 
@@ -101,11 +107,13 @@ function change(){
     for (var n=0;n<d.length;n++){
         var preid="i"+n
         var a=document.getElementById(preid);
-        if(e==0){
-            a.innerHTML=d[n][1];
-        }
-        else{
-            a.innerHTML="？";
+        if(a!=null){
+            if(e==0){
+                a.innerHTML=d[n][1];
+            }
+            else{
+                a.innerHTML="？";
+            }
         }
     }
     if(e==0){
@@ -113,5 +121,38 @@ function change(){
     }
     else{
         e=0;
+    }
+}
+
+var sub1="a";
+function find(){
+    if(window.confirm("分野を絞り込みますか？")){
+        var sub=prompt("検索したい分野を入力してください");
+        if(sub=="リセット"){
+            for (var n=0;n<d.length;n++){
+                var preid="i"+n
+                var a=document.getElementById(preid);
+                if(d[n][3].indexOf(sub1)!=-1){
+                    var parent=a.parentNode;
+                    parent.remove();
+                }
+            }
+            d=shuffle(d);
+            c=0;
+            rem=1;
+            e=0;
+            create_bot();
+        }
+        else{
+            sub1=sub;
+            for (var n=0;n<d.length;n++){
+                var preid="i"+n
+                var a=document.getElementById(preid);
+                if(d[n][3].indexOf(sub)==-1){
+                    var parent=a.parentNode;
+                    parent.remove();
+                }
+            }
+        }
     }
 }
