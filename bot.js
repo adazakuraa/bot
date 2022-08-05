@@ -107,7 +107,6 @@ function change(){
     for (var n=0;n<d.length;n++){
         var preid="i"+n
         var a=document.getElementById(preid);
-<<<<<<< HEAD
         if(a!=null){
             if(e==0){
                 a.innerHTML=d[n][1];
@@ -116,16 +115,6 @@ function change(){
                 a.innerHTML="？";
             }
         }
-=======
-	if(a!=null){
-          if(e==0){
-              a.innerHTML=d[n][1];
-          }
-          else{
-              a.innerHTML="？";
-          }
-        }  
->>>>>>> origin/master
     }
     if(e==0){
         e=1;
@@ -135,10 +124,7 @@ function change(){
     }
 }
 
-<<<<<<< HEAD
-=======
 
->>>>>>> origin/master
 var sub1="a";
 function find(){
     if(window.confirm("分野を絞り込みますか？")){
@@ -170,8 +156,4 @@ function find(){
             }
         }
     }
-<<<<<<< HEAD
-}
-=======
-}
->>>>>>> origin/master
+
